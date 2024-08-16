@@ -1,0 +1,106 @@
+.navbar-custom {
+  position: relative;
+  background: linear-gradient(
+    130.513deg,
+    #174060 0%,
+    #1c5480 49%,
+    #174060 100%
+  );
+  z-index: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../../assets/img/frame.png") no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+.container-custom {
+  &:global(.navbar),
+  &:global(.container) {
+    padding: 8px;
+    margin-left: 60px;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 24px;
+  margin: 0; /* Remove any default margins */
+  padding: 0; /* Remove any default padding */
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: normal;
+  letter-spacing: 0.3em;
+  margin: 0; /* Remove any default margins */
+  padding: 0; /* Remove any default padding */
+}
+
+@media (max-width: 768px) {
+  .navbar-custom {
+    &::after {
+      background-size: contain; /* Adjust the background size for tablets */
+    }
+  }
+
+  .container-custom {
+    &:global(.navbar),
+    &:global(.container) {
+      padding: 8px;
+      margin-left: 20px; /* Adjust margin for smaller screens */
+    }
+  }
+
+  .title,
+  .subtitle {
+    font-size: 20px; /* Slightly reduce font size for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-custom {
+    &::after {
+      background-size: cover; /* Ensure the background covers the navbar */
+      background-position: top; /* Adjust position to align better on small screens */
+    }
+  }
+
+  .container-custom {
+    &:global(.navbar),
+    &:global(.container) {
+      padding: 8px;
+      margin-left: 0; /* Remove margin for small screens */
+    }
+  }
+
+  .title,
+  .subtitle {
+    font-size: 18px; /* Further reduce font size for phones */
+    text-align: center; /* Center-align text on small screens */
+  }
+
+  .brand-container {
+    flex-direction: column; /* Stack logo and text vertically */
+  }
+}

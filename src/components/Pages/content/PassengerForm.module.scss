@@ -1,0 +1,110 @@
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  width: max-content;
+  gap: 8px;
+}
+
+.button-add-destination {
+  &:global(.btn),
+  &:global(.btn-primary) {
+    width: 211px;
+    background-color: #cce7ff;
+    border-color: #969696;
+    color: #285a81;
+  }
+
+  &:hover {
+    background-color: #afceea;
+    color: #285a81;
+  }
+}
+
+.button-delete-location {
+  &:global(.btn),
+  &:global(.btn-danger) {
+    width: 211px;
+    background-color: #ffd0db;
+    border-color: #ff3465;
+    color: #812828;
+  }
+
+  &:hover {
+    background-color: #e5bac5;
+    color: #812828;
+  }
+}
+
+.trip-button {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}
+
+.button-one-way,
+.button-calculate {
+  &:global(.btn),
+  &:global(.btn-primary) {
+    width: 100%;
+    background-color: #285a81;
+    border-color: #285a81;
+    color: #ffff;
+  }
+
+  &:hover {
+    background-color: #285a81;
+  }
+}
+
+.button-round-trip {
+  &:global(.btn),
+  &:global(.btn-primary) {
+    width: 100%;
+    background-color: #cce7ff;
+    border-color: #969696;
+    color: #285a81;
+  }
+
+  &:hover {
+    background-color: #afceea;
+    color: #285a81;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-group {
+    width: 100%;
+  }
+  .button-add-destination {
+    &:global(.btn),
+    &:global(.btn-primary) {
+      width: 100%;
+    }
+  }
+
+  .button-delete-location {
+    &:global(.btn),
+    &:global(.btn-danger) {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .button-group {
+    width: 100%;
+  }
+  button-add-destination {
+    &:global(.btn),
+    &:global(.btn-primary) {
+      width: 100%;
+    }
+  }
+
+  .button-delete-location {
+    &:global(.btn),
+    &:global(.btn-danger) {
+      width: 100%;
+    }
+  }
+}

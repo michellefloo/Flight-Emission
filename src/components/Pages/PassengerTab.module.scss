@@ -1,0 +1,12 @@
+.tab-container {
+  &:global(.nav-justified),
+  &:global(.nav-item),
+  &:global(.nav-link),
+  &:global(.nav-link.active) {
+    margin-bottom: 20px;
+    width: 148px;
+    height: 46px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+}
