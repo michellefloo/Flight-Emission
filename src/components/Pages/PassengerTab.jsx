@@ -3,7 +3,7 @@ import Tabs from "react-bootstrap/Tabs";
 import styles from "./PassengerTab.module.scss";
 import PassengerForm from "./content/PassengerForm";
 
-function Content() {
+function PassengerTab() {
   return (
     <Tabs
       defaultActiveKey="passenger"
@@ -18,4 +18,4 @@ function Content() {
   );
 }
 
-export default Content;
+export default PassengerTab;

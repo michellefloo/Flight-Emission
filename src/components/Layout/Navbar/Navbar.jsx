@@ -12,7 +12,7 @@ function NavbarFlightEmission() {
         className={styles["navbar-custom"]}
       >
         <Container className={styles["container-custom"]}>
-          <Navbar.Brand href="#home" className={styles["brand-container"]}>
+          <Navbar.Brand href="/" className={styles["brand-container"]}>
             <img
               src={logo}
               alt="Logo"

@@ -1,8 +1,14 @@
 import Button from "react-bootstrap/Button";
 import { Form, Row, Col } from "react-bootstrap";
 import styles from "./PassengerForm.module.scss";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 function PassengerForm() {
+  const navigate = useNavigate(); // Create a navigate function
+
+  const handleCalculateClick = () => {
+    navigate("/calculate"); // Navigate to /calculate on button click
+  };
   return (
     <Form>
       <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
@@ -68,7 +74,11 @@ function PassengerForm() {
           </Form.Group>
         </Col>
       </Row>
-      <Button variant="primary" className={styles["button-calculate"]}>
+      <Button
+        variant="primary"
+        className={styles["button-calculate"]}
+        onClick={handleCalculateClick}
+      >
         Calculate
       </Button>
     </Form>
