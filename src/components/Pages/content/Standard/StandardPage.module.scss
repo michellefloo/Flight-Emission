@@ -1,0 +1,371 @@
+.summary-card-container {
+  margin-bottom: 20px;
+
+  .summary-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #285a81;
+  }
+
+  .summary-card {
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .summary-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    .cgk-info,
+    .hnd-info {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+
+      .cgk-title,
+      .hnd-title {
+        white-space: nowrap; /* Prevent text from wrapping to the next line */
+        font-weight: bold;
+        color: #285a81;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .passenger-card {
+    padding: 10px;
+    border-radius: 0;
+  }
+
+  .passenger-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .passenger-title {
+      white-space: nowrap; /* Prevent text from wrapping to the next line */
+      font-weight: bold;
+      color: #285a81;
+      text-transform: uppercase;
+    }
+
+    .passenger-content {
+      font-weight: 500;
+      color: #285a81;
+      text-transform: uppercase;
+    }
+  }
+
+  .cabin-card {
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .cabin-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 220px;
+
+    .cabin-title {
+      white-space: nowrap;
+      font-weight: bold;
+      color: #285a81;
+      text-transform: uppercase;
+    }
+
+    .cabin-content {
+      font-weight: 500;
+      color: #285a81;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.offset-card-container {
+  margin-bottom: 20px;
+
+  .offset-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #285a81;
+  }
+
+  .offset-card {
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #e5f3ff;
+  }
+
+  .offset-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .offset-content-title {
+      white-space: nowrap;
+      color: #285a81;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+
+      .blue-text {
+        color: #285a81;
+      }
+
+      .pink-text {
+        color: #a00090;
+      }
+
+      .green-text {
+        color: #3e7b01;
+      }
+    }
+
+    .button-container {
+      display: flex;
+      width: 269px;
+      height: 40px;
+
+      .button-offset {
+        &:global(.btn),
+        &:global(.btn-primary) {
+          width: 100%;
+          background-color: #285a81;
+          border-color: #285a81;
+          color: #ffff;
+        }
+
+        &:hover {
+          background-color: #285a81;
+        }
+      }
+    }
+  }
+}
+
+.flight-stage-card-container {
+  margin-bottom: 20px;
+
+  .flight-stage-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #285a81;
+  }
+
+  .flight-stage-cgk-to-sin {
+    margin-bottom: 8px;
+  }
+
+  .flight-stage-card {
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .flight-stage-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    .cgk-info,
+    .sg-info,
+    .hnd-info {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+
+      .cgk-title,
+      .sg-title,
+      .hnd-title {
+        white-space: nowrap; /* Prevent text from wrapping to the next line */
+        font-weight: bold;
+        color: #285a81;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .distance-card {
+    padding: 10px;
+    border-radius: 0;
+  }
+
+  .distance-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .distance-title {
+      white-space: nowrap; /* Prevent text from wrapping to the next line */
+      font-weight: bold;
+      color: #285a81;
+      text-transform: uppercase;
+    }
+
+    .distance-content {
+      font-weight: 500;
+      color: #285a81;
+      text-transform: uppercase;
+    }
+  }
+
+  .cabin-card {
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .cabin-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 220px;
+
+    .cabin-title {
+      white-space: nowrap;
+      font-weight: bold;
+      color: #285a81;
+      text-transform: uppercase;
+    }
+
+    .cabin-content {
+      font-weight: 500;
+      color: #285a81;
+      text-transform: uppercase;
+    }
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 996px) {
+  .summary-card-container,
+  .offset-card-container,
+  .flight-stage-card-container {
+    margin: 10px;
+  }
+
+  .summary-info,
+  .flight-stage-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  .passenger-info {
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+
+  .cabin-info {
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    flex-direction: column;
+    gap: 0 !important;
+  }
+
+  .offset-info {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column;
+
+    .offset-content-title {
+      white-space: pre-wrap !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+  }
+
+  .distance-info {
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+
+  .offset-card {
+    padding: 20px;
+  }
+
+  .button-container {
+    width: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .summary-card-title,
+  .offset-card-title,
+  .flight-stage-card-title {
+    font-size: 16px;
+  }
+
+  .summary-info,
+  .flight-stage-info {
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  .passenger-info {
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+
+  .cabin-info {
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    flex-direction: column;
+    gap: 0 !important;
+  }
+
+  .offset-info {
+    font-size: 14px;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column;
+
+    .offset-content-title {
+      white-space: pre-wrap !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+  }
+
+  .distance-info {
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+
+  .offset-card {
+    padding: 15px;
+  }
+
+  .button-container {
+    width: auto;
+  }
+
+  .flight-stage-card {
+    padding: 5px;
+  }
+}
