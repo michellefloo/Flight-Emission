@@ -69,6 +69,9 @@
     &:global(.container) {
       padding: 8px;
       margin-left: 20px; /* Adjust margin for smaller screens */
+      text-align: center;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -91,6 +94,9 @@
     &:global(.container) {
       padding: 8px;
       margin-left: 0; /* Remove margin for small screens */
+      text-align: center;
+      align-items: center;
+      justify-content: center;
     }
   }
 

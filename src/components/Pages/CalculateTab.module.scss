@@ -46,7 +46,7 @@
   }
 
   &:hover {
-    background-color: #0085ff;
+    background-color: rgb(18, 60, 99);
   }
 }
 
@@ -65,65 +65,5 @@
 
   &:hover {
     background-color: rgb(106, 203, 233);
-  }
-}
-
-.card-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #285a81;
-}
-
-.destination-card {
-  padding: 10px;
-  border-radius: 8px 8px 0 0;
-}
-
-.passenger-card {
-  padding: 10px;
-  border-radius: 0;
-}
-
-.passenger-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .passenger-title {
-    white-space: nowrap; /* Prevent text from wrapping to the next line */
-    font-weight: bold;
-    color: #285a81;
-    text-transform: uppercase;
-  }
-
-  .passenger-content {
-    font-weight: 500;
-    color: #285a81;
-    text-transform: uppercase;
-  }
-}
-
-.cabin-card {
-  padding: 10px;
-  border-radius: 0 0 8px 8px;
-}
-
-.cabin-info {
-  display: flex;
-  justify-content: flex-start; /* Center items */
-  align-items: center;
-  gap: 220px; /* Adjust space between items */
-
-  .cabin-title {
-    white-space: nowrap; /* Prevent text from wrapping to the next line */
-    font-weight: bold;
-    color: #285a81;
-    text-transform: uppercase;
-  }
-
-  .cabin-content {
-    font-weight: 500;
-    color: #285a81;
-    text-transform: uppercase;
   }
 }

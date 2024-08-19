@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Card } from "reactstrap";
 import styles from "./CalculateTab.module.scss";
 import { Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
+import MetricPage from "./content/Metric/MetricPage";
+import StandardPage from "./content/Standard/StandardPage";
 
 function CalculateTab() {
   const [activeTab, setActiveTab] = useState("metric");
@@ -38,7 +39,7 @@ function CalculateTab() {
           color={activeTab === "metric" ? "primary" : "secondary"}
           onClick={() => toggleTab("metric")}
         >
-          Metric
+          Metric (Kg/Km)
         </Button>
 
         <Button
@@ -50,37 +51,11 @@ function CalculateTab() {
           color={activeTab === "standard" ? "primary" : "secondary"}
           onClick={() => toggleTab("standard")}
         >
-          Standard
+          Standard (Lbs/MI)
         </Button>
       </div>
-      {activeTab === "metric" && (
-        <div>
-          <div className={styles["card-title"]}>Summary</div>
-          <div className={styles["card-container"]}>
-            <Card className={styles["destination-card"]}>CGK -{">"} HND</Card>
-            <Card className={styles["passenger-card"]}>
-              <div className={styles["passenger-info"]}>
-                <div className={styles["passenger-title"]}>Passengers</div>
-                <div className={styles["passenger-content"]}>
-                  1 Total passengers’ CO2/journey
-                </div>
-                <div className={styles["passenger-content"]}>
-                  428 KG Aircraft Fuel Burn/journey
-                </div>
-                <div className={styles["passenger-content"]}>45,175 KG</div>
-              </div>
-            </Card>
-            <Card className={styles["cabin-card"]}>
-              <div className={styles["cabin-info"]}>
-                <div className={styles["cabin-title"]}>Cabin class</div>
-                <div className={styles["cabin-content"]}>Economy trip</div>
-                <div className={styles["cabin-content"]}>One way</div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      )}
-      {activeTab === "standard" && <div>Tab content for Standard</div>}
+      {activeTab === "metric" && <MetricPage />}
+      {activeTab === "standard" && <StandardPage />}
     </>
   );
 }

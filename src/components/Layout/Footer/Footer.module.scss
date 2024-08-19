@@ -49,18 +49,15 @@
     align-items: flex-start; /* Align items to the start to give more space */
   }
 
-  .left-section {
-    align-items: flex-start; /* Align left-section items to the start */
-    margin-bottom: 10px; /* Add spacing between sections */
+  .left-section,
+  .right-section {
+    width: 100%; /* Make sections full width */
+    text-align: center; /* Center-align text for very small screens */
+    align-items: center; /* Center-align content within sections */
   }
 
   .logo {
     margin-left: 0; /* Remove extra margin for smaller screens */
-  }
-
-  .right-section {
-    align-items: flex-start; /* Align right-section items to the start */
-    font-size: 20px; /* Adjust font size for smaller screens */
   }
 
   .title,
