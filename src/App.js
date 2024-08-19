@@ -15,6 +15,7 @@ const Home = React.lazy(() => import("./components/Pages/PassengerTab"));
 const CalculatePage = React.lazy(() =>
   import("./components/Pages/CalculateTab")
 );
+const OffsetPage = React.lazy(() => import("./components/Pages/OffsetPage"));
 
 const Footer = React.lazy(() => import("./components/Layout/Footer/Footer"));
 
@@ -29,7 +30,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/calculate" element={<CalculatePage />} />
-                {/* <Route path="/offset" element={<OffsetPage />} /> */}
+                <Route path="/offset" element={<OffsetPage />} />
               </Routes>
             </main>
             <Footer />
