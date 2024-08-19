@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card } from "reactstrap";
 import styles from "./CalculateTab.module.scss";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 function CalculateTab() {
   const [activeTab, setActiveTab] = useState("metric");
@@ -10,8 +11,23 @@ function CalculateTab() {
     if (activeTab !== tab) setActiveTab(tab);
   };
 
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/");
+  };
+
   return (
     <>
+      <div className={styles["button-container"]}>
+        <Button
+          variant="secondary"
+          className={styles["button-back"]}
+          onClick={handleButtonClick}
+        >
+          Back
+        </Button>
+      </div>
       <div className={`${styles["active-tab"]}`}>
         <Button
           className={

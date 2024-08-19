@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 function PassengerForm() {
   const navigate = useNavigate(); // Create a navigate function
 
-  const handleCalculateClick = () => {
+  const handleButtonClick = () => {
     navigate("/calculate"); // Navigate to /calculate on button click
   };
   return (
@@ -77,7 +77,7 @@ function PassengerForm() {
       <Button
         variant="primary"
         className={styles["button-calculate"]}
-        onClick={handleCalculateClick}
+        onClick={handleButtonClick}
       >
         Calculate
       </Button>
