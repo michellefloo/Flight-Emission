@@ -18,15 +18,15 @@
     align-items: center;
     gap: 10px;
 
-    .cgk-info,
-    .hnd-info {
+    .origin-info,
+    .departure-info {
       display: flex;
       justify-content: flex-start;
       align-items: center;
       gap: 10px;
 
-      .cgk-title,
-      .hnd-title {
+      .origin-title,
+      .departure.title {
         white-space: nowrap; /* Prevent text from wrapping to the next line */
         font-weight: bold;
         color: #285a81;
@@ -140,7 +140,7 @@
         }
 
         &:hover {
-          background-color: #285a81;
+          background-color: rgb(18, 60, 99);
         }
       }
     }
@@ -156,7 +156,9 @@
     color: #285a81;
   }
 
-  .flight-stage-cgk-to-sin {
+  .flight-stage-1,
+  .flight-stage-2,
+  .flight-stage-3 {
     margin-bottom: 8px;
   }
 
@@ -171,17 +173,15 @@
     align-items: center;
     gap: 10px;
 
-    .cgk-info,
-    .sg-info,
-    .hnd-info {
+    .origin-info,
+    .departure-info {
       display: flex;
       justify-content: flex-start;
       align-items: center;
       gap: 10px;
 
-      .cgk-title,
-      .sg-title,
-      .hnd-title {
+      .origin-title,
+      .departure.title {
         white-space: nowrap; /* Prevent text from wrapping to the next line */
         font-weight: bold;
         color: #285a81;

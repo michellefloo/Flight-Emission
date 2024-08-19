@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import styles from "./CalculateTab.module.scss";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import MetricPage from "./content/Metric/MetricPage";
-import StandardPage from "./content/Standard/StandardPage";
+import MetricPage from "./MetricPage";
+import StandardPage from "./StandardPage";
+import { metricDummyData, standardDummyData } from "./constant/DataDummy";
 
 function CalculateTab() {
   const [activeTab, setActiveTab] = useState("metric");
@@ -54,8 +55,8 @@ function CalculateTab() {
           Standard (Lbs/MI)
         </Button>
       </div>
-      {activeTab === "metric" && <MetricPage />}
-      {activeTab === "standard" && <StandardPage />}
+      {activeTab === "metric" && <MetricPage data={metricDummyData} />}
+      {activeTab === "standard" && <StandardPage data={standardDummyData} />}
     </>
   );
 }
