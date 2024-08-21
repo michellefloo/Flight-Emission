@@ -73,3 +73,15 @@
     background-color: rgb(106, 203, 233);
   }
 }
+
+/* Media query for mobile */
+@media (max-width: 576px) {
+  .active-tab {
+    display: flex;
+    margin-bottom: 20px;
+    width: 360px;
+    height: 42px;
+    gap: 10px;
+    justify-content: center !important;
+  }
+}

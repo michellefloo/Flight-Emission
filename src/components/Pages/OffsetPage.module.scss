@@ -118,3 +118,11 @@
 .product-varian:hover {
   filter: drop-shadow(0px 0px 8px #285a8186);
 }
+
+/* Media query for mobile */
+@media (max-width: 576px) {
+  .card-container {
+    padding: 20px 40px;
+    border-radius: 8px;
+  }
+}
