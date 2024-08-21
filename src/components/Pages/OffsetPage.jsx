@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import productThumb from "../../assets/img/mangrove-thumb.png";
 import productVarian from "../../assets/img/mangrove-varian.png";
 import OffsetForm from "./content/OffsetForm";
+import ReportIcon from "../../assets/icons/ReportIcon";
 
 function OffsetPage() {
   const navigate = useNavigate();
@@ -42,8 +43,11 @@ function OffsetPage() {
       <div className={styles["content"]}>
         <Card>
           <CardHeader className={styles["card-header"]}>
-            Planting 50 Mangrove trees can help you absorb up to 1,650 kg of
-            CO2e from the atmosphere.
+            <div className={styles["report-info"]}>
+              <ReportIcon width={24} color="#fff" />
+              Planting 50 Mangrove trees can help you absorb up to 1,650 kg of
+              CO2e from the atmosphere.
+            </div>
           </CardHeader>
           <CardBody className={styles["card-body"]}>
             Aviation is a significant source of carbon dioxide (CO2) emissions,

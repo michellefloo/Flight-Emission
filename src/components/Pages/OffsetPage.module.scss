@@ -59,7 +59,13 @@
 .card-header {
   background: #285a81;
   color: white;
+
+  .report-info {
+    display: flex;
+    gap: 4px;
+  }
 }
+
 .card-body {
   background: #e5f3ff;
   color: #585757;
@@ -122,7 +128,7 @@
 /* Media query for mobile */
 @media (max-width: 576px) {
   .card-container {
-    padding: 20px 40px;
+    padding: 20px;
     border-radius: 8px;
   }
 }
