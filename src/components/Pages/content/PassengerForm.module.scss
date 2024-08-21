@@ -1,3 +1,15 @@
+.origin-airport-label-container,
+.dest-airport-label-container,
+.number-of-passenger-label,
+.cabin-class-label,
+.trip-label {
+  display: flex;
+  gap: 4px;
+  color: #285a81;
+  font-size: 16px;
+  font-weight: 700;
+}
+
 .button-group {
   display: flex;
   flex-wrap: wrap;
@@ -12,11 +24,19 @@
     background-color: #cce7ff;
     border-color: #969696;
     color: #285a81;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   &:hover {
     background-color: #afceea;
     color: #285a81;
+  }
+
+  .add-destination-label-icon {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
   }
 }
 
@@ -27,11 +47,19 @@
     background-color: #ffd0db;
     border-color: #ff3465;
     color: #812828;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   &:hover {
     background-color: #e5bac5;
     color: #812828;
+  }
+
+  .delete-location-label-icon {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
   }
 }
 
@@ -49,6 +77,8 @@
     background-color: #285a81;
     border-color: #285a81;
     color: #ffff;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   &:hover {
@@ -63,6 +93,8 @@
     background-color: #cce7ff;
     border-color: #969696;
     color: #285a81;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   &:hover {

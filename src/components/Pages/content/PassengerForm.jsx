@@ -10,6 +10,10 @@ import {
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
+import HelpIcon from "../../../assets/icons/HelpIcon";
+import TooltipWithIcons from "../../Widget/TooltipWithIcons/TooltipWithIcons";
+import AddIcon from "../../../assets/icons/AddIcon";
+import TrashIcon from "../../../assets/icons/TrashIcon";
 
 function PassengerForm() {
   const navigate = useNavigate();
@@ -32,6 +36,7 @@ function PassengerForm() {
   const toggleButton = (button) => {
     if (activeButton !== button) setActiveButton(button);
   };
+
   return (
     <Formik
       initialValues={{
@@ -47,7 +52,13 @@ function PassengerForm() {
       {({ handleSubmit, handleChange, values, errors, touched }) => (
         <Form noValidate onSubmit={handleSubmit}>
           <Form.Group className="mb-4" controlId="origin">
-            <Form.Label>Origin Airport</Form.Label>
+            <div className={styles["origin-airport-label-container"]}>
+              <Form.Label>Origin Airport</Form.Label>
+              <TooltipWithIcons
+                icon={<HelpIcon width={20} height={25} color="#285A81" />}
+                tooltipText="Select your starting airport for the flight"
+              />
+            </div>
             <Form.Select
               name="origin"
               value={values.origin}
@@ -66,12 +77,19 @@ function PassengerForm() {
           </Form.Group>
 
           <Form.Group className="mb-4" controlId="destination">
-            <Form.Label>Destination Airport</Form.Label>
+            <div className={styles["dest-airport-label-container"]}>
+              <Form.Label>Destination Airport</Form.Label>
+              <TooltipWithIcons
+                icon={<HelpIcon width={20} height={25} color="#285A81" />}
+                tooltipText="Select your destination airport where you will land"
+              />
+            </div>
             <Form.Select
               name="destination"
               value={values.destination}
               onChange={handleChange}
               isInvalid={touched.destination && !!errors.destination}
+              className="mb-2"
             >
               {DESTINATION_AIRPORTS.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -88,13 +106,19 @@ function PassengerForm() {
                 variant="primary"
                 className={styles["button-add-destination"]}
               >
-                Add Destination
+                <div className={styles["add-destination-label-icon"]}>
+                  Add Destination
+                  <AddIcon width={16} height={25} color="#285A81" />
+                </div>
               </Button>
               <Button
                 variant="danger"
                 className={styles["button-delete-location"]}
               >
-                Delete All Locations
+                <div className={styles["delete-location-label-icon"]}>
+                  Delete All Locations
+                  <TrashIcon width={16} height={25} color="#812828" />
+                </div>
               </Button>
             </div>
           </Form.Group>
@@ -102,7 +126,9 @@ function PassengerForm() {
           <Row className="mb-4">
             <Col md={4}>
               <Form.Group className="mb-3" controlId="passengers">
-                <Form.Label>Numbers of Passenger</Form.Label>
+                <Form.Label className={styles["number-of-passenger-label"]}>
+                  Numbers of Passenger
+                </Form.Label>
                 <Form.Control
                   type="number"
                   name="passengers"
@@ -119,7 +145,9 @@ function PassengerForm() {
 
             <Col md={4}>
               <Form.Group className="mb-3" controlId="cabinClass">
-                <Form.Label>Cabin Class</Form.Label>
+                <Form.Label className={styles["cabin-class-label"]}>
+                  Cabin Class
+                </Form.Label>
                 <Form.Select
                   name="cabinClass"
                   value={values.cabinClass}
@@ -140,7 +168,7 @@ function PassengerForm() {
 
             <Col md={4}>
               <Form.Group className="mb-3" controlId="trip">
-                <Form.Label>Trip</Form.Label>
+                <Form.Label className={styles["trip-label"]}>Trip</Form.Label>
                 <div className={styles["trip-button"]}>
                   <Button
                     variant="primary"

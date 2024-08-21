@@ -21,6 +21,12 @@
       background-color: #adadad;
     }
   }
+
+  .back-label-icon {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+  }
 }
 
 .active-tab {

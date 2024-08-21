@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import MetricPage from "./MetricPage";
 import StandardPage from "./StandardPage";
+import BackIcon from "../../assets/icons/BackIcon";
 import { metricDummyData, standardDummyData } from "./constant/DataDummy";
 
 function CalculateTab() {
@@ -27,7 +28,10 @@ function CalculateTab() {
           className={styles["button-back"]}
           onClick={handleButtonClick}
         >
-          Back
+          <div className={styles["back-label-icon"]}>
+            <BackIcon width={16} height={25} color="#1e1e1e" />
+            Back
+          </div>
         </Button>
       </div>
       <div className={`${styles["active-tab"]}`}>
