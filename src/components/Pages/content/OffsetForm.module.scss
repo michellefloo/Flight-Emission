@@ -8,3 +8,13 @@
     background-color: rgb(18, 60, 99);
   }
 }
+
+.number-of-passenger-label,
+.cabin-class-label,
+.trip-label {
+  display: flex;
+  gap: 4px;
+  color: #285a81;
+  font-size: 16px;
+  font-weight: 700;
+}

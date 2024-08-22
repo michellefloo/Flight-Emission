@@ -18,3 +18,9 @@ export const CABIN_CLASSES = [
   { value: "2", label: "Executive" },
   { value: "3", label: "Premium" },
 ];
+
+export const TRIP = [
+  { value: "", label: "Select your Trip" },
+  { value: "1", label: "One Way" },
+  { value: "2", label: "Round Trip" },
+];
