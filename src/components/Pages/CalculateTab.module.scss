@@ -54,6 +54,10 @@
   &:hover {
     background-color: rgb(18, 60, 99);
   }
+
+  &:active {
+    background-color: #39719b !important;
+  }
 }
 
 .metric-tab-secondary,

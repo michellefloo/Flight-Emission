@@ -1,20 +1,17 @@
-import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
+import { Button } from "reactstrap";
 import styles from "./PassengerTab.module.scss";
 import PassengerForm from "./content/PassengerForm";
 
 function PassengerTab() {
   return (
-    <Tabs
-      defaultActiveKey="passenger"
-      id="justify-tab-example"
-      className={styles["tab-container"]}
-      justify
-    >
-      <Tab eventKey="passenger" title="Passenger">
-        <PassengerForm />
-      </Tab>
-    </Tabs>
+    <div>
+      <div className={`${styles["active-tab"]}`}>
+        <Button className={`${styles["metric-tab-primary"]}`} color={"primary"}>
+          Passenger
+        </Button>
+      </div>
+      <PassengerForm />
+    </div>
   );
 }
 

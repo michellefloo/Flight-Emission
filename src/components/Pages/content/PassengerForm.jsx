@@ -1,5 +1,13 @@
-import Button from "react-bootstrap/Button";
-import { Form, Row, Col } from "react-bootstrap";
+import {
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  FormFeedback,
+  Row,
+  Col,
+} from "reactstrap";
 import styles from "./PassengerForm.module.scss";
 import { useNavigate } from "react-router-dom";
 import {
@@ -51,44 +59,48 @@ function PassengerForm() {
     >
       {({ handleSubmit, handleChange, values, errors, touched }) => (
         <Form noValidate onSubmit={handleSubmit}>
-          <Form.Group className="mb-4" controlId="origin">
+          <FormGroup className="mb-4">
             <div className={styles["origin-airport-label-container"]}>
-              <Form.Label>Origin Airport</Form.Label>
+              <Label for="origin">Origin Airport</Label>
               <TooltipWithIcons
                 icon={<HelpIcon width={20} height={25} color="#285A81" />}
                 tooltipText="Select your starting airport for the flight"
               />
             </div>
-            <Form.Select
+            <Input
+              type="select"
               name="origin"
+              id="origin"
               value={values.origin}
               onChange={handleChange}
-              isInvalid={touched.origin && !!errors.origin}
+              invalid={touched.origin && !!errors.origin}
             >
               {ORIGIN_AIRPORTS.map((option) => (
                 <option key={option.value} value={option.value}>
                   {option.label}
                 </option>
               ))}
-            </Form.Select>
-            <Form.Control.Feedback type="invalid">
-              {errors.origin}
-            </Form.Control.Feedback>
-          </Form.Group>
+            </Input>
+            {touched.origin && errors.origin && (
+              <FormFeedback>{errors.origin}</FormFeedback>
+            )}
+          </FormGroup>
 
-          <Form.Group className="mb-4" controlId="destination">
+          <FormGroup className="mb-4">
             <div className={styles["dest-airport-label-container"]}>
-              <Form.Label>Destination Airport</Form.Label>
+              <Label for="destination">Destination Airport</Label>
               <TooltipWithIcons
                 icon={<HelpIcon width={20} height={25} color="#285A81" />}
                 tooltipText="Select your destination airport where you will land"
               />
             </div>
-            <Form.Select
+            <Input
+              type="select"
               name="destination"
+              id="destination"
               value={values.destination}
               onChange={handleChange}
-              isInvalid={touched.destination && !!errors.destination}
+              invalid={touched.destination && !!errors.destination}
               className="mb-2"
             >
               {DESTINATION_AIRPORTS.map((option) => (
@@ -96,14 +108,14 @@ function PassengerForm() {
                   {option.label}
                 </option>
               ))}
-            </Form.Select>
-            <Form.Control.Feedback type="invalid">
-              {errors.destination}
-            </Form.Control.Feedback>
+            </Input>
+            {touched.destination && errors.destination && (
+              <FormFeedback>{errors.destination}</FormFeedback>
+            )}
 
             <div className={styles["button-group"]}>
               <Button
-                variant="primary"
+                color="primary"
                 className={styles["button-add-destination"]}
               >
                 <div className={styles["add-destination-label-icon"]}>
@@ -112,7 +124,7 @@ function PassengerForm() {
                 </div>
               </Button>
               <Button
-                variant="danger"
+                color="danger"
                 className={styles["button-delete-location"]}
               >
                 <div className={styles["delete-location-label-icon"]}>
@@ -121,57 +133,63 @@ function PassengerForm() {
                 </div>
               </Button>
             </div>
-          </Form.Group>
+          </FormGroup>
 
           <Row className="mb-4">
             <Col md={4}>
-              <Form.Group className="mb-3" controlId="passengers">
-                <Form.Label className={styles["number-of-passenger-label"]}>
+              <FormGroup className="mb-3">
+                <Label
+                  for="passengers"
+                  className={styles["number-of-passenger-label"]}
+                >
                   Numbers of Passenger
-                </Form.Label>
-                <Form.Control
+                </Label>
+                <Input
                   type="number"
                   name="passengers"
+                  id="passengers"
                   placeholder="1"
                   value={values.passengers}
                   onChange={handleChange}
-                  isInvalid={touched.passengers && !!errors.passengers}
+                  invalid={touched.passengers && !!errors.passengers}
                 />
-                <Form.Control.Feedback type="invalid">
-                  {errors.passengers}
-                </Form.Control.Feedback>
-              </Form.Group>
+                {touched.passengers && errors.passengers && (
+                  <FormFeedback>{errors.passengers}</FormFeedback>
+                )}
+              </FormGroup>
             </Col>
 
             <Col md={4}>
-              <Form.Group className="mb-3" controlId="cabinClass">
-                <Form.Label className={styles["cabin-class-label"]}>
+              <FormGroup className="mb-3">
+                <Label for="cabinClass" className={styles["cabin-class-label"]}>
                   Cabin Class
-                </Form.Label>
-                <Form.Select
+                </Label>
+                <Input
+                  type="select"
                   name="cabinClass"
+                  id="cabinClass"
                   value={values.cabinClass}
                   onChange={handleChange}
-                  isInvalid={touched.cabinClass && !!errors.cabinClass}
+                  invalid={touched.cabinClass && !!errors.cabinClass}
                 >
                   {CABIN_CLASSES.map((option) => (
                     <option key={option.value} value={option.value}>
                       {option.label}
                     </option>
                   ))}
-                </Form.Select>
-                <Form.Control.Feedback type="invalid">
-                  {errors.cabinClass}
-                </Form.Control.Feedback>
-              </Form.Group>
+                </Input>
+                {touched.cabinClass && errors.cabinClass && (
+                  <FormFeedback>{errors.cabinClass}</FormFeedback>
+                )}
+              </FormGroup>
             </Col>
 
             <Col md={4}>
-              <Form.Group className="mb-3" controlId="trip">
-                <Form.Label className={styles["trip-label"]}>Trip</Form.Label>
+              <FormGroup className="mb-3">
+                <Label className={styles["trip-label"]}>Trip</Label>
                 <div className={styles["trip-button"]}>
                   <Button
-                    variant="primary"
+                    color="primary"
                     className={
                       activeButton === "one-way"
                         ? `${styles["button-one-way"]}`
@@ -183,7 +201,7 @@ function PassengerForm() {
                     One Way
                   </Button>
                   <Button
-                    variant="primary"
+                    color="primary"
                     className={
                       activeButton === "one-way"
                         ? `${styles["button-round-trip"]}`
@@ -195,12 +213,12 @@ function PassengerForm() {
                     Round Trip
                   </Button>
                 </div>
-              </Form.Group>
+              </FormGroup>
             </Col>
           </Row>
 
           <Button
-            variant="primary"
+            color="primary"
             className={styles["button-calculate"]}
             type="submit"
           >

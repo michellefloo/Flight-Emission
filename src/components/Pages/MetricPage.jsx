@@ -1,11 +1,10 @@
 import React from "react";
-import { Card } from "reactstrap";
+import { Card, Button } from "reactstrap";
 import styles from "./MetricPage.module.scss";
 import IndonesiaFlag from "../../assets/icons/IndonesiaFlag.png";
 import JPFlag from "../../assets/icons/JPFlag.png";
 import SGFlag from "../../assets/icons/SGFlag.png";
 import ArrowIcon from "../../assets/icons/ArrowIcon";
-import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const MetricPage = ({ data }) => {

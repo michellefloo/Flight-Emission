@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./CalculateTab.module.scss";
-import { Button } from "react-bootstrap";
+import { Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import MetricPage from "./MetricPage";
 import StandardPage from "./StandardPage";

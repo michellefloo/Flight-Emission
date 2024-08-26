@@ -1,5 +1,4 @@
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
+import { Container, Navbar, NavbarBrand } from "reactstrap";
 import styles from "./Navbar.module.scss";
 import logo from "../../../assets/img/logo.png";
 
@@ -7,12 +6,13 @@ function NavbarFlightEmission() {
   return (
     <>
       <Navbar
-        bg="primary"
-        data-bs-theme="dark"
+        color="primary"
+        dark
         className={styles["navbar-custom"]}
+        expand="md"
       >
         <Container className={styles["container-custom"]}>
-          <Navbar.Brand href="/" className={styles["brand-container"]}>
+          <NavbarBrand href="/" className={styles["brand-container"]}>
             <img
               src={logo}
               alt="Logo"
@@ -24,7 +24,7 @@ function NavbarFlightEmission() {
               </span>
               <span className={styles["subtitle"]}>CALCULATOR</span>
             </div>
-          </Navbar.Brand>
+          </NavbarBrand>
         </Container>
       </Navbar>
     </>

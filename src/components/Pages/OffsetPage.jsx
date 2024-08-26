@@ -1,7 +1,6 @@
 import React from "react";
-import { Card, CardBody, CardHeader } from "reactstrap";
+import { Card, CardBody, CardHeader, Button, Row, Col } from "reactstrap";
 import styles from "./OffsetPage.module.scss";
-import { Button, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import productThumb from "../../assets/img/mangrove-thumb.png";
 import productVarian from "../../assets/img/mangrove-varian.png";
