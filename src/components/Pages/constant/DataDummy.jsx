@@ -115,3 +115,37 @@ export const standardDummyData = {
     },
   ],
 };
+
+export const offsetPageDummyData = {
+  reportInfo:
+    "Planting 50 Mangrove trees can help you absorb up to 1,650 kg of CO2e from the atmosphere.",
+  description: `Aviation is a significant source of carbon dioxide (CO2) emissions, contributing substantially to climate change. Every time an aircraft
+            flies, jet fuel is burned, resulting in greenhouse gas emissions
+            that pollute the atmosphere. The carbon emissions from flights are
+            calculated based on factors such as the flight distance, type of
+            aircraft, number of passengers, and fuel consumption.`,
+  product: {
+    mangroveesQuantity: "50",
+    co2: "1,650 kg CO2e",
+    quantity: "2,259",
+    price: "45,175,000",
+    images: [
+      {
+        desc: "Mangrove tree variant 1",
+        link: "assets/img/mangrove-varian.png",
+      },
+      {
+        desc: "Mangrove tree variant 2",
+        link: "assets/img/mangrove-varian.png",
+      },
+      {
+        desc: "Mangrove tree variant 3",
+        link: "assets/img/mangrove-varian.png",
+      },
+      {
+        desc: "Mangrove tree variant 4",
+        link: "assets/img/mangrove-varian.png",
+      },
+    ],
+  },
+};

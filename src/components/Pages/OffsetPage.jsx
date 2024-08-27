@@ -3,9 +3,9 @@ import { Card, CardBody, CardHeader, Button, Row, Col } from "reactstrap";
 import styles from "./OffsetPage.module.scss";
 import { useNavigate } from "react-router-dom";
 import productThumb from "../../assets/img/mangrove-thumb.png";
-import productVarian from "../../assets/img/mangrove-varian.png";
 import OffsetForm from "./content/OffsetForm";
 import ReportIcon from "../../assets/icons/ReportIcon";
+import { offsetPageDummyData } from "./constant/DataDummy";
 
 function OffsetPage() {
   const navigate = useNavigate();
@@ -44,17 +44,11 @@ function OffsetPage() {
           <CardHeader className={styles["card-header"]}>
             <div className={styles["report-info"]}>
               <ReportIcon width={24} color="#fff" />
-              Planting 50 Mangrove trees can help you absorb up to 1,650 kg of
-              CO2e from the atmosphere.
+              {offsetPageDummyData.reportInfo}
             </div>
           </CardHeader>
           <CardBody className={styles["card-body"]}>
-            Aviation is a significant source of carbon dioxide (CO2) emissions,
-            contributing substantially to climate change. Every time an aircraft
-            flies, jet fuel is burned, resulting in greenhouse gas emissions
-            that pollute the atmosphere. The carbon emissions from flights are
-            calculated based on factors such as the flight distance, type of
-            aircraft, number of passengers, and fuel consumption.
+            {offsetPageDummyData.description}
           </CardBody>
         </Card>
         <Row className={styles["product"]}>
@@ -65,39 +59,33 @@ function OffsetPage() {
                 alt="product"
                 className={styles["product-thumb"]}
               />
-              <h2 className={styles["product-title"]}>50 Mangrove Tress</h2>
+              <h2 className={styles["product-title"]}>
+                {offsetPageDummyData.product.mangroveesQuantity} Mangroves Trees
+              </h2>
               <p className={styles["product-desc"]}>
-                Absorbs up to 1,650 kg CO2e
+                Absorbs up to {offsetPageDummyData.product.co2}
               </p>
             </div>
             <Row>
               <Col md={12} className="m-0 p-0">
-                <img
-                  src={productVarian}
-                  alt="product-varian"
-                  className={styles["product-varian"]}
-                />
-                <img
-                  src={productVarian}
-                  alt="product-varian"
-                  className={styles["product-varian"]}
-                />
-                <img
-                  src={productVarian}
-                  alt="product-varian"
-                  className={styles["product-varian"]}
-                />
-                <img
-                  src={productVarian}
-                  alt="product-varian"
-                  className={styles["product-varian"]}
-                />
+                {offsetPageDummyData.product.images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={require(`../../${image.link}`)} 
+                    alt={image.desc || "Product Varian"}
+                    className={styles["product-varian"]}
+                  />
+                ))}
               </Col>
             </Row>
           </Col>
           <Col md={6}>
-            <h2 className={styles["product-qty"]}>2,259 Mangroves Tree</h2>
-            <h3 className={styles["product-price"]}>Rp 45,175,000 </h3>
+            <h2 className={styles["product-qty"]}>
+              {offsetPageDummyData.product.quantity} Mangroves Tree
+            </h2>
+            <h3 className={styles["product-price"]}>
+              Rp {offsetPageDummyData.product.price}{" "}
+            </h3>
             <OffsetForm />
           </Col>
         </Row>
