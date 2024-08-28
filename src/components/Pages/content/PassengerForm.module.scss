@@ -2,6 +2,7 @@
 .dest-airport-label-container,
 .number-of-passenger-label,
 .cabin-class-label,
+.aircraft-type-label,
 .trip-label {
   display: flex;
   gap: 4px;
@@ -111,7 +112,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .button-group {
     width: 100%;
   }
@@ -127,6 +128,15 @@
     &:global(.btn-danger) {
       width: 100%;
     }
+  }
+  .col-half {
+    flex: 0 0 auto !important;
+    width: 50% !important;
+  }
+
+  .col-full {
+    flex: 0 0 auto !important;
+    width: 100% !important;
   }
 }
 
@@ -146,5 +156,15 @@
     &:global(.btn-danger) {
       width: 100%;
     }
+  }
+
+  .col-half {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+  }
+
+  .col-full {
+    flex: 0 0 auto !important;
+    width: 100% !important;
   }
 }

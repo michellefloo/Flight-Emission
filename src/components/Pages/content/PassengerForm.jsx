@@ -14,6 +14,7 @@ import {
   ORIGIN_AIRPORTS,
   DESTINATION_AIRPORTS,
   CABIN_CLASSES,
+  AIRCRAFT_TYPE,
 } from "../constant/constants";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -33,6 +34,7 @@ function PassengerForm() {
       .required("Number of Passengers is required")
       .min(1, "At least 1 passenger is required"),
     cabinClass: Yup.string().required("Cabin Class is required"),
+    aircraftType: Yup.string().required("Aircraft Type is required"),
   });
 
   const handleButtonClick = () => {
@@ -52,6 +54,7 @@ function PassengerForm() {
         destination: "",
         passengers: "",
         cabinClass: "",
+        aircraftType: "",
         trip: "one-way",
       }}
       validationSchema={validationSchema}
@@ -136,7 +139,7 @@ function PassengerForm() {
           </FormGroup>
 
           <Row className="mb-4">
-            <Col md={4}>
+            <Col md={3} className={styles["col-half"]}>
               <FormGroup className="mb-3">
                 <Label
                   for="passengers"
@@ -159,7 +162,7 @@ function PassengerForm() {
               </FormGroup>
             </Col>
 
-            <Col md={4}>
+            <Col md={3} className={styles["col-half"]}>
               <FormGroup className="mb-3">
                 <Label for="cabinClass" className={styles["cabin-class-label"]}>
                   Cabin Class
@@ -184,7 +187,35 @@ function PassengerForm() {
               </FormGroup>
             </Col>
 
-            <Col md={4}>
+            <Col md={3} className={styles["col-full"]}>
+              <FormGroup className="mb-3">
+                <Label
+                  for="aircraftType"
+                  className={styles["aircraft-type-label"]}
+                >
+                  Aircraft Type
+                </Label>
+                <Input
+                  type="select"
+                  name="aircraftType"
+                  id="aircraftType"
+                  value={values.aircraftType}
+                  onChange={handleChange}
+                  invalid={touched.aircraftType && !!errors.aircraftType}
+                >
+                  {AIRCRAFT_TYPE.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </Input>
+                {touched.aircraftType && errors.aircraftType && (
+                  <FormFeedback>{errors.aircraftType}</FormFeedback>
+                )}
+              </FormGroup>
+            </Col>
+
+            <Col md={3} className={styles["col-full"]}>
               <FormGroup className="mb-3">
                 <Label className={styles["trip-label"]}>Trip</Label>
                 <div className={styles["trip-button"]}>
