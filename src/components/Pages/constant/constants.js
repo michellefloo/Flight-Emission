@@ -1,15 +1,15 @@
 export const ORIGIN_AIRPORTS = [
   { value: "", label: "Select your Origin Airport" },
-  { value: "1", label: "One" },
-  { value: "2", label: "Two" },
-  { value: "3", label: "Three" },
+  { value: "1", label: "Jakarta, Indonesia (Jakarta-Soekarno-Hatta - CGK)" },
+  { value: "2", label: "Singapore, Singapore (Singapore-Changi - SIN)" },
+  { value: "3", label: "Tokyo, Japan (Tokyo-Haneda - HND)" },
 ];
 
 export const DESTINATION_AIRPORTS = [
   { value: "", label: "Select your Dest. Airport" },
-  { value: "1", label: "One" },
-  { value: "2", label: "Two" },
-  { value: "3", label: "Three" },
+  { value: "1", label: "Jakarta, Indonesia (Jakarta-Soekarno-Hatta - CGK)" },
+  { value: "2", label: "Singapore, Singapore (Singapore-Changi - SIN)" },
+  { value: "3", label: "Tokyo, Japan (Tokyo-Haneda - HND)" },
 ];
 
 export const CABIN_CLASSES = [
